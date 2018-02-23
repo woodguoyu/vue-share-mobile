@@ -4,4 +4,4 @@
 - 实现了 axios 的二次封装，使用内部请求方法更加简洁；
 - 封装了商品列表、组合商品类似重复使用组件，提高戴安编写效率；
 
-  - [演示]https://agent.zhidinghuo.com/sharepc/#/?corpid=1
+- [移动端演示] https://agent.zhidinghuo.com/share/index?corpid=1
