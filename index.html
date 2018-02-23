@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="telephone=no,email=no,adress=no" name="format-detection" />
+    <meta name="x5-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="x5-page-mode" content="app"/>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/icon" id="headerIcon"  href="">
+    <link rel=stylesheet type=text/css  href='static/css/base.css'>
+    <link rel=stylesheet type=text/css href='static/lib/iview/iview.css'>
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/lodash.min.js"></script>
+    <title>MOBILE</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script type="text/javascript">
+    // rem 布局
+    // 如果页面的宽度超过了750px，那么页面中html的font-size恒为100px，否则，页面中html的font-size的大小为： 100 * (当前页面宽度 / 750)
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if(clientWidth>=750){
+            docEl.style.fontSize = '100px';
+          }else{
+            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+          }
+        };
+
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+  </script>
+</html>
